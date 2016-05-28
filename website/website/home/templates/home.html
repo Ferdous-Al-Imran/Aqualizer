@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>AQUALIZER</title>
+  {% load staticfiles %}
+  <link href="{% static 'home/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'home/css/animate.min.css'%}" rel="stylesheet">
+  <link href="{% static 'home/css/font-awesome.min.css'%}" rel="stylesheet">
+  <link href="{% static 'home/css/lightbox.css'%}" rel="stylesheet">
+  <link href="{% static 'home/css/main.css'%}" rel="stylesheet">
+  <link id="css-preset" href="{% static 'home/css/presets/preset1.css' %}" rel="stylesheet">
+  <link href="{% static 'home/css/responsive.css'%}" rel="stylesheet">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="{% static 'home/images/favicon.ico'%}">
+</head><!--/head-->
+
+<body>
+  <header id="home">
+    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-repeat:no-repeat;
+background-position:center;background-image: url({% static 'home/images/slider/1.jpg'%})">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Welcome to <span>Oxygen</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+          </div>
+        </div>
+        <div class="item" style="background-repeat:no-repeat;
+background-position:center;background-image: url({% static 'home/images/slider/2.jpg'%})">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <span>Oxygen</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+          </div>
+        </div>
+        <div class="item" style="background-repeat:no-repeat;
+background-position:center;background-image: url({% static 'home/images/slider/3.jpg'%})">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <span>Oxygen</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+          </div>
+        </div>
+        <div class="item" style="background-repeat:no-repeat;
+background-position:center;background-image: url({% static 'home/images/slider/4.jpg'%})">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <span>Oxygen</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+          </div>
+        </div>
+        <div class="item" style="background-repeat:no-repeat;
+background-position:center;background-image: url({% static 'home/images/slider/5.jpg'%})">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <span>Oxygen</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+          </div>
+        </div>
+        <div class="item" style="background-repeat:no-repeat;
+background-position:center;background-image: url({% static 'home/images/slider/6.jpg'%})">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <span>Oxygen</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+          </div>
+        </div>
+        <div class="item" style="background-repeat:no-repeat;
+background-position:center;background-image: url({% static 'home/images/slider/7.jpg'%})">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <span>Oxygen</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+          </div>
+        </div>
+        <div class="item" style="background-repeat:no-repeat;
+background-position:center;background-image: url({% static 'home/images/slider/8.jpg'%})">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">We are <span>Creative</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+          </div>
+        </div>
+      </div>
+      <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+
+    </div><!--/#home-slider-->
+    <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="templates/home.html">
+            <h1><img src="{% static "home/images/logo.png"%}" style="max-height:100px" alt="logo"></h1>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="scroll active"><a href="#home">Home</a></li>
+            <li class="scroll"><a href="#team">Team</a></li>
+            <li class="scroll"><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+
+  <section id="team">
+    <div class="container">
+      <div class="row">
+        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+          <h2>The Team</h2>
+        </div>
+      </div>
+      <div class="team-members">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-image">
+                <img src="{% static "home/images/team/1.png"%}" style="max-height:350px" />
+              </div>
+              <div class="member-info">
+                <h3>Marian Dixon</h3>
+                <h4>CEO &amp; Founder</h4>
+                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="800ms">
+              <div class="member-image">
+                <!-- <img class="img-responsive" src="images/team/2.jpg" alt=""> -->
+                <img src="{% static "home/images/team/2.png"%}" style="max-height:350px" />
+
+
+              </div>
+              <div class="member-info">
+                <h3>Lois Clark</h3>
+                <h4>Developer</h4>
+                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
+              <div class="member-image">
+              <img src="{% static "home/images/team/3.png"%}" style="max-height:350px" />
+              </div>
+              <div class="member-info">
+                <h3>Marian Dixon</h3>
+                <h4>Support Manager</h4>
+                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--/#team-->
+
+  <section id="contact">
+    <div id="google-map" class="wow fadeIn" data-latitude="23.726329" data-longitude="90.388669" data-wow-duration="1000ms" data-wow-delay="400ms"></div>
+    <div id="contact-us" class="parallax">
+      <div class="container">
+        <div class="row">
+          <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+          </div>
+        </div>
+        <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                <ul class="address">
+                  <li><i class="fa fa-map-marker"></i> <span> Address:</span> 2400 South Avenue A </li>
+                  <li><i class="fa fa-phone"></i> <span> Phone:</span> +928 336 2000  </li>
+                  <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:someone@yoursite.com"> support@oxygen.com</a></li>
+                  <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.sitename.com</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--/#contact-->
+  <footer id="footer">
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="container text-center">
+        <div class="footer-logo">
+          <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+        </div>
+        <div class="social-icons">
+          <ul>
+            <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>&copy; 2016 Oxygen Theme.</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="pull-right">Crafted by <a href="http://designscrazed.org/">Allie</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script type="text/javascript" src="{% static "home/js/jquery.js"%}"></script>
+  <script type="text/javascript" src="{% static "home/js/bootstrap.min.js"%}"></script>
+  <script type="text/javascript" src="{% static "home/js/jquery.inview.min.js"%}"></script>
+  <script type="text/javascript" src="{% static "home/js/wow.min.js"%}"></script>
+  <script type="text/javascript" src="{% static "home/js/mousescroll.js"%}"></script>
+  <script type="text/javascript" src="{% static "home/js/smoothscroll.js"%}"></script>
+  <script type="text/javascript" src="{% static "home/js/jquery.countTo.js"%}"></script>
+  <script type="text/javascript" src="{% static "home/js/lightbox.min.js"%}"></script>
+  <script type="text/javascript" src="{% static "home/js/main.js"%}"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
+<!-- 
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/mousescroll.js"></script>
+  <script type="text/javascript" src="js/smoothscroll.js"></script>
+  <script type="text/javascript" src="js/jquery.countTo.js"></script>
+  <script type="text/javascript" src="js/lightbox.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script> -->
+
+</body>
+</html>

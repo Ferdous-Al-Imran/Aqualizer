@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Dashboard</title>
+  {% load staticfiles %}
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="{% static 'sensorValue/bootstrap/css/bootstrap.min.css'%}">
+
+
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'sensorValue/dist/css/AdminLTE.min.css'%}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{% static 'sensorValue/dist/css/skins/_all-skins.min.css'%}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static 'sensorValue/plugins/iCheck/flat/blue.css'%}">
+
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="{% static 'sensorValue/plugins/morris/morris.css'%}">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="{% static 'sensorValue/plugins/jvectormap/jquery-jvectormap-1.2.2.css'%}">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="{% static 'sensorValue/plugins/datepicker/datepicker3.css'%}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'sensorValue/plugins/daterangepicker/daterangepicker-bs3.css'%}">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="{% static 'sensorValue/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'%}">
+
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'sensorValue/dist/css/AdminLTE.min.css'%}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{% static 'sensorValue/dist/css/skins/_all-skins.min.css'%}">
+
+
+
+
+<link rel="stylesheet" href="{% static 'sensorValue/plugins/bootstrap-slider/slider.css'%}">
+  <!-- Ion Slider -->
+  <link rel="stylesheet" href="{% static 'sensorValue/plugins/ionslider/ion.rangeSlider.css'%}">
+  <!-- ion slider Nice -->
+  <link rel="stylesheet" href="{% static 'sensorValue/plugins/ionslider/ion.rangeSlider.skinFlat.css'%}">
+  
+
+
+
+  <!-- Ion Slider -->
+  <!-- ion slider Nice -->
+  <!-- bootstrap slider -->
+  
+  <!-- Theme style -->
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>C</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Aquarium</b>Controller</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <!-- Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope fa-lg"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- inner menu: contains the messages -->
+                <ul class="menu">
+                  <li><!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <!-- User Image -->
+                        <img src="{% static 'sensorValue/dist/img/user.png'%}" class="img-circle" alt="User Image">
+                      </div>
+                      <!-- Message title and timestamp -->
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock fa-lg"></i> 5 mins</small>
+                      </h4>
+                      <!-- The message -->
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                </ul>
+                <!-- /.menu -->
+              </li>
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+          </li>
+          <!-- /.messages-menu -->
+
+          <!-- Notifications Menu -->
+          <li class="dropdown notifications-menu">
+            <!-- Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell fa-lg" aria-hidden="true"></i>
+              <span class="label label-warning">10</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 10 notifications</li>
+              <li>
+                <!-- Inner Menu: contains the notifications -->
+                <ul class="menu">
+                  <li><!-- start notification -->
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                  <!-- end notification -->
+                </ul>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="{% static 'sensorValue/dist/img/user.png'%}" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">Md. Al Imran</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="{% static 'sensorValue/dist/img/user.png'%}"  class="img-circle" alt="User Image">
+
+                <p>
+                  Md. Al Imran
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="{% static 'sensorValue/dist/img/user.png'%}" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Md. Al Imran</p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+
+      <!-- search form (Optional) -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+
+      <!-- Sidebar Menu -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+        <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
+          </a>
+          
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Sensor Status</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> PH </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Temperature </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Salinity </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Dissolved Oxygen </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Turbidity </a></li>
+            
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Charts</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> PH VS Time </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Temperature VS Time </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> DO VS Time </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Salinity VS Time </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Turbidity VS Time </a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-envelope text-yellow"></i>
+            <span> Alarm and Notification </span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> PH </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Temperature </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> DO </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Salinity </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Turbidity</a></li>
+          </ul>
+        </li>
+        
+        
+        
+        
+        
+        <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li class="header">LABELS</li>
+        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Your Page Content Here -->
+      <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-12 connectedSortable">
+          <!-- Small boxes (Stat box) -->
+      <div class="row">
+
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+              <p>Bounce Rate</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>44</h3>
+
+              <p>User Registrations</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>65</h3>
+
+              <p>Unique Visitors</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>150</h3>
+
+              <p>New Orders</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+              <p>Bounce Rate</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>44</h3>
+
+              <p>User Registrations</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+        </section>
+      </div>
+     
+      <!-- sensors detailed view -->
+      <div class="row">
+        <div class="box box-solid bg-light-blue-gradient">
+          <div class="box-header with-border">
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+              <!-- /. tools -->
+
+              <h3 class="box-title">
+                Sensor
+              </h3>
+          </div>
+          <!-- box body -->
+          <div class="box-body">
+          <div class="col-md-6 col-sm-12">
+
+          <!-- till -->
+            <div class="row">
+              <div class="col-md-8 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Current Status</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <ul class="nav nav-stacked">
+                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
+                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
+                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
+                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                  </ul>
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Set Alarm</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                <br>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+                    
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-bell-o fa-lg'></i> Alarm" data-off="<i class='fa fa-bell-slash-o fa-lg'></i> No Alarm" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  <hr>
+                  <hr>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+              
+                      
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-envelope-o fa-lg'></i> Notify    " data-off="<i class='fa fa-envelope-slash-o fa-lg'></i> No Noticee" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            </div>
+            <!-- end row -->
+            <!-- new row -->
+            <hr>
+            <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <p style="font-size: 120%;color: black">PH Range</p>
+                    <input id="range_1" type="text" name="range_1" value="">
+                </div>
+              </div>
+              </div>
+            </div>
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <!-- interactive chart -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-bar-chart-o"></i>
+
+              <h3 class="box-title">Ph vs Time</h3>
+
+              <div class="box-tools pull-right">
+                Real time
+                <div class="btn-group" id="realtime" data-toggle="btn-toggle">
+                  <button type="button" class="btn btn-default btn-xs active" data-toggle="on">On</button>
+                  <button type="button" class="btn btn-default btn-xs" data-toggle="off">Off</button>
+                </div>
+              </div>
+            </div>
+            <div class="box-body">
+              <div id="interactive" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+            </div>
+          </div>
+          <!-- box body end -->
+        </div>
+
+      </div>
+      <!-- -----------------------------sensor reading 2------------------------ -->
+      <div class="row">
+        <div class="box box-solid " style="background-color: rgb(41, 163, 163);">
+          <div class="box-header with-border">
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;background-color: rgb(41, 163, 163);">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+              <!-- /. tools -->
+
+              <h3 class="box-title" style="color: white;">
+                Temperature Sensor
+              </h3>
+          </div>
+          <!-- box body -->
+          <div class="box-body">
+          <div class="col-md-6 col-sm-12">
+
+          <!-- till -->
+            <div class="row">
+              <div class="col-md-8 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Current Status</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <ul class="nav nav-stacked">
+                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
+                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
+                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
+                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                  </ul>
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Set Alarm</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                <br>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+                    
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-bell-o fa-lg'></i> Alarm" data-off="<i class='fa fa-bell-slash-o fa-lg'></i> No Alarm" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  <hr>
+                  <hr>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+              
+                      
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-envelope-o fa-lg'></i> Notify    " data-off="<i class='fa fa-envelope-slash-o fa-lg'></i> No Noticee" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            </div>
+            <!-- end row -->
+            <!-- new row -->
+            <hr>
+            <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <p style="font-size: 120%;color: black">PH Range</p>
+                    <input id="range_2" type="text" name="range_2" value="">
+                </div>
+              </div>
+              </div>
+            </div>
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <!-- interactive chart -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-bar-chart-o"></i>
+
+              <h3 class="box-title">Temperature vs Time</h3>
+
+              <div class="box-tools pull-right">
+                Real time
+                <div class="btn-group" id="realtime2" data-toggle="btn-toggle">
+                  <button type="button" class="btn btn-default btn-xs active" data-toggle="on">On</button>
+                  <button type="button" class="btn btn-default btn-xs" data-toggle="off">Off</button>
+                </div>
+              </div>
+            </div>
+            <div class="box-body">
+              <div id="interactive2" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+            </div>
+          </div>
+          <!-- box body end -->
+        </div>
+
+      </div>
+      <!-- sensor reading 3 -->
+      <div class="row">
+        <div class="box box-solid bg-green-gradient ">
+          <div class="box-header with-border">
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+              <!-- /. tools -->
+
+              <h3 class="box-title" style="color: white;">
+                Salinity Sensor
+              </h3>
+          </div>
+          <!-- box body -->
+          <div class="box-body">
+          <div class="col-md-6 col-sm-12">
+
+          <!-- till -->
+            <div class="row">
+              <div class="col-md-8 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Current Status</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <ul class="nav nav-stacked">
+                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
+                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
+                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
+                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                  </ul>
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Set Alarm</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                <br>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+                    
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-bell-o fa-lg'></i> Alarm" data-off="<i class='fa fa-bell-slash-o fa-lg'></i> No Alarm" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  <hr>
+                  <hr>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+              
+                      
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-envelope-o fa-lg'></i> Notify    " data-off="<i class='fa fa-envelope-slash-o fa-lg'></i> No Noticee" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            </div>
+            <!-- end row -->
+            <!-- new row -->
+            <hr>
+            <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <p style="font-size: 120%;color: black">PH Range</p>
+                    <input id="range_3" type="text" name="range_3" value="">
+                </div>
+              </div>
+              </div>
+            </div>
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <!-- interactive chart -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-bar-chart-o"></i>
+
+              <h3 class="box-title">Temperature vs Time</h3>
+
+              <div class="box-tools pull-right">
+                Real time
+                <div class="btn-group" id="realtime3" data-toggle="btn-toggle">
+                  <button type="button" class="btn btn-default btn-xs active" data-toggle="on">On</button>
+                  <button type="button" class="btn btn-default btn-xs" data-toggle="off">Off</button>
+                </div>
+              </div>
+            </div>
+            <div class="box-body">
+              <div id="interactive3" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+            </div>
+          </div>
+          <!-- box body end -->
+        </div>
+        </div>
+
+      <!------------------------------ sensor reading 4 -------------------------->
+      <div class="row">
+        <div class="box box-solid bg-light-blue-gradient ">
+          <div class="box-header with-border">
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;background-color:blue;">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+              <!-- /. tools -->
+
+              <h3 class="box-title" style="color: white;">
+                Dissolved Oxygen Sensor
+              </h3>
+          </div>
+          <!-- box body -->
+          <div class="box-body">
+          <div class="col-md-6 col-sm-12">
+
+          <!-- till -->
+            <div class="row">
+              <div class="col-md-8 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Current Status</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <ul class="nav nav-stacked">
+                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
+                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
+                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
+                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                  </ul>
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Set Alarm</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                <br>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+                    
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-bell-o fa-lg'></i> Alarm" data-off="<i class='fa fa-bell-slash-o fa-lg'></i> No Alarm" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  <hr>
+                  <hr>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+              
+                      
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-envelope-o fa-lg'></i> Notify    " data-off="<i class='fa fa-envelope-slash-o fa-lg'></i> No Noticee" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            </div>
+            <!-- end row -->
+            <!-- new row -->
+            <hr>
+            <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <p style="font-size: 120%;color: black">DO Range</p>
+                    <input id="range_4" type="text" name="range_4" value="">
+                </div>
+              </div>
+              </div>
+            </div>
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <!-- interactive chart -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-bar-chart-o"></i>
+
+              <h3 class="box-title">DO vs Time</h3>
+
+              <div class="box-tools pull-right">
+                Real time
+                <div class="btn-group" id="realtime4" data-toggle="btn-toggle">
+                  <button type="button" class="btn btn-default btn-xs active" data-toggle="on">On</button>
+                  <button type="button" class="btn btn-default btn-xs" data-toggle="off">Off</button>
+                </div>
+              </div>
+            </div>
+            <div class="box-body">
+              <div id="interactive4" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+            </div>
+          </div>
+          <!-- box body end -->
+        </div>
+        </div>
+
+
+
+
+
+      <!--------------------- sensor reading 5 ------------------------------ -->
+      <div class="row">
+        <div class="box box-solid"  style="background-color: rgb(41, 163, 163);">
+          <div class="box-header with-border">
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;background-color: rgb(41, 163, 163);">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+              <!-- /. tools -->
+
+              <h3 class="box-title" style="color: white;">
+                Turbidity Sensor
+              </h3>
+          </div>
+          <!-- box body -->
+          <div class="box-body">
+          <div class="col-md-6 col-sm-12">
+
+          <!-- till -->
+            <div class="row">
+              <div class="col-md-8 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Current Status</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <ul class="nav nav-stacked">
+                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
+                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
+                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
+                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                  </ul>
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Set Alarm</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                <br>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+                    
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-bell-o fa-lg'></i> Alarm" data-off="<i class='fa fa-bell-slash-o fa-lg'></i> No Alarm" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  <hr>
+                  <hr>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+              
+                      
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-envelope-o fa-lg'></i> Notify    " data-off="<i class='fa fa-envelope-slash-o fa-lg'></i> No Noticee" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            </div>
+            <!-- end row -->
+            <!-- new row -->
+            <hr>
+            <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <p style="font-size: 120%;color: black">PH Range</p>
+                    <input id="range_5" type="text" name="range_5" value="">
+                </div>
+              </div>
+              </div>
+            </div>
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <!-- interactive chart -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-bar-chart-o"></i>
+
+              <h3 class="box-title">Temperature vs Time</h3>
+
+              <div class="box-tools pull-right">
+                Real time
+                <div class="btn-group" id="realtime3" data-toggle="btn-toggle">
+                  <button type="button" class="btn btn-default btn-xs active" data-toggle="on">On</button>
+                  <button type="button" class="btn btn-default btn-xs" data-toggle="off">Off</button>
+                </div>
+              </div>
+            </div>
+            <div class="box-body">
+              <div id="interactive5" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+            </div>
+          </div>
+          <!-- box body end -->
+        </div>
+        </div>
+
+
+
+  <!-- ------------------------sensor reading 6------------------------------- -->
+      <div class="row">
+        <div class="box box-solid bg-green-gradient ">
+          <div class="box-header with-border">
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;background-color: green;">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+              <!-- /. tools -->
+
+              <h3 class="box-title" style="color: white;">
+                Salinity Sensor
+              </h3>
+          </div>
+          <!-- box body -->
+          <div class="box-body">
+          <div class="col-md-6 col-sm-12">
+
+          <!-- till -->
+            <div class="row">
+              <div class="col-md-8 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Current Status</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <ul class="nav nav-stacked">
+                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
+                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
+                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
+                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                  </ul>
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <h3 class="box-title">Set Alarm</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                <br>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+                    
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-bell-o fa-lg'></i> Alarm" data-off="<i class='fa fa-bell-slash-o fa-lg'></i> No Alarm" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  <hr>
+                  <hr>
+                  <div>
+                  <p style="font-size: 120%;color: black">
+              
+                      
+                    <input type="checkbox" checked data-toggle="toggle" data-on="<i class='fa fa-envelope-o fa-lg'></i> Notify    " data-off="<i class='fa fa-envelope-slash-o fa-lg'></i> No Noticee" data-onstyle="success" data-offstyle="danger">
+                    </p>
+
+                  </div>
+                  
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+            </div>
+            <!-- end row -->
+            <!-- new row -->
+            <hr>
+            <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="box box-solid box-info">
+                <div class="box-header">
+                  <p style="font-size: 120%;color: black">PH Range</p>
+                    <input id="range_6" type="text" name="range_6" value="">
+                </div>
+              </div>
+              </div>
+            </div>
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <!-- interactive chart -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-bar-chart-o"></i>
+
+              <h3 class="box-title">Temperature vs Time</h3>
+
+              <div class="box-tools pull-right">
+                Real time
+                <div class="btn-group" id="realtime3" data-toggle="btn-toggle">
+                  <button type="button" class="btn btn-default btn-xs active" data-toggle="on">On</button>
+                  <button type="button" class="btn btn-default btn-xs" data-toggle="off">Off</button>
+                </div>
+              </div>
+            </div>
+            <div class="box-body">
+              <div id="interactive6" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+            </div>
+          </div>
+          <!-- box body end -->
+        </div>
+        </div>
+
+
+
+
+
+    </section>
+    
+
+    <!-- /.main content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane active" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="label label-danger pull-right">70%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+       
+
+<!-- jQuery 2.2.0 -->
+<script src="{% static 'sensorValue/plugins/jQuery/jQuery-2.2.0.min.js'%}"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{% static 'sensorValue/bootstrap/js/bootstrap.min.js'%}"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="{% static 'sensorValue/dist/js/app.min.js'%}"></script>
+
+
+<script src="{% static 'sensorValue/plugins/flot/jquery.flot.min.js'%}"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="{% static 'sensorValue/plugins/flot/jquery.flot.resize.min.js'%}"></script>
+<!-- AdminLTE App -->
+
+<script type="text/javascript" src="{% static 'sensorValue/plugins/flot/dataentry.js'%}"></script>
+
+<script src="{% static 'sensorValue/plugins/ionslider/ion.rangeSlider.min.js'%}"></script>
+<!-- Bootstrap slider -->
+<script src="{% static 'sensorValue/plugins/bootstrap-slider/bootstrap-slider.js'%}"></script>
+<script>
+  $(function () {
+    /* BOOTSTRAP SLIDER */
+    $('.slider').slider();
+
+    /* ION SLIDER */
+    $("#range_1").ionRangeSlider({
+      min: 0,
+      max: 14,
+      from: 5,
+      to: 14,
+      type: 'double',
+      step: 0.1,
+      prettify: true,
+      hasGrid: true
+    });
+
+    $("#range_2").ionRangeSlider({
+      min: 0,
+      max: 14,
+      from: 5,
+      to: 14,
+      type: 'double',
+      step: 0.1,
+      prettify: true,
+      hasGrid: true
+    });
+    $("#range_3").ionRangeSlider({
+      min: 0,
+      max: 14,
+      from: 5,
+      to: 14,
+      type: 'double',
+      step: 0.1,
+      prettify: true,
+      hasGrid: true
+    });
+
+    $("#range_4").ionRangeSlider({
+      min: 0,
+      max: 14,
+      from: 5,
+      to: 14,
+      type: 'double',
+      step: 0.1,
+      prettify: true,
+      hasGrid: true
+    });
+
+    $("#range_5").ionRangeSlider({
+      min: 0,
+      max: 14,
+      from: 5,
+      to: 14,
+      type: 'double',
+      step: 0.1,
+      prettify: true,
+      hasGrid: true
+    });
+    $("#range_6").ionRangeSlider({
+      min: 0,
+      max: 14,
+      from: 5,
+      to: 14,
+      type: 'double',
+      step: 0.1,
+      prettify: true,
+      hasGrid: true
+    });
+    
+  });
+</script>
+
+
+
+</body>
+</html>
