@@ -3,6 +3,6 @@ from . import views
 app_name='sensorValue'
 
 urlpatterns = [
-    url(r'^$',views.SensorValueView.as_view(),name='sensorValue'),
+    url(r'^([0-9]+)/$',views.SensorValueView,name='sensorValue'),
    
 ]

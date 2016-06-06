@@ -77,6 +77,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+<ul>
+  {% for pi in parameter_ideals %}
+    <li><a href="#">{{pi.standardValue}}</a></li>
+    <!-- <li><a href="#">{{all_user.username}}</a></li> -->
+  {% endfor %}
+</ul>
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -166,7 +172,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- The user image in the navbar-->
               <img src="{% static 'sensorValue/dist/img/user.png'%}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Md. Al Imran</span>
+              <span class="hidden-xs">{{all_user.username}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -174,7 +180,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <img src="{% static 'sensorValue/dist/img/user.png'%}"  class="img-circle" alt="User Image">
 
                 <p>
-                  Md. Al Imran
+                  {{all_user.username}}
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -224,7 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="{% static 'sensorValue/dist/img/user.png'%}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Md. Al Imran</p>
+          <p>{{all_user.username}}</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -248,37 +254,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
+            <i class="fa fa-dashboard text-aqua"></i> <span>Dashboard</span></i>
           </a>
           
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-files-o text-blue"></i>
             <span>Sensor Status</span>
-            <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-angle-left pull-right text-blue"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> PH </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Temperature </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Salinity </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Dissolved Oxygen </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Turbidity </a></li>
+            <li><a href="#ph"><i class="fa fa-circle-o text-blue"></i> PH </a></li>
+            <li><a href="#temperature"><i class="fa fa-circle-o text-blue"></i> Temperature </a></li>
+            <li><a href="#do"><i class="fa fa-circle-o text-blue"></i> Dissolved Oxygen </a></li>
+            <li><a href="#salinity"><i class="fa fa-circle-o text-blue"></i> Salinity </a></li>
+            <li><a href="#turbidity"><i class="fa fa-circle-o text-blue"></i> Turbidity </a></li>
+            <li><a href="#waterlevel"><i class="fa fa-circle-o text-blue"></i> Water Level </a></li>
             
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
+          <a href="#"> 
+            <i class="fa fa-pie-chart text-green"></i>
             <span>Charts</span>
-            <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-angle-left pull-right text-green"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> PH VS Time </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Temperature VS Time </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> DO VS Time </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Salinity VS Time </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Turbidity VS Time </a></li>
+            <li><a href="#ph"><i class="fa fa-circle-o text-green"></i> PH VS Time </a></li>
+            <li><a href="#temperature"><i class="fa fa-circle-o text-green"></i> Temperature VS Time </a></li>
+            <li><a href="#do"><i class="fa fa-circle-o text-green"></i> DO VS Time </a></li>
+            <li><a href="#salinity"><i class="fa fa-circle-o text-green"></i> Salinity VS Time </a></li>
+            <li><a href="#turbidity"><i class="fa fa-circle-o text-green"></i> Turbidity VS Time </a></li>
+            <li><a href="#waterlevel"><i class="fa fa-circle-o text-green"></i> Water Level VS Time </a></li>
+
           </ul>
         </li>
         <li class="treeview">
@@ -288,23 +297,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> PH </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Temperature </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> DO </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Salinity </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Turbidity</a></li>
+            <li><a href="#ph"><i class="fa fa-circle-o text-yellow"></i> PH </a></li>
+            <li><a href="#temperature"><i class="fa fa-circle-o text-yellow"></i> Temperature </a></li>
+            <li><a href="#do"><i class="fa fa-circle-o text-yellow"></i> Dissolved Oxygen </a></li>
+            <li><a href="#salinity"><i class="fa fa-circle-o text-yellow"></i> Salinity </a></li>
+            <li><a href="#turbidity"><i class="fa fa-circle-o text-yellow"></i> Turbidity </a></li>
+            <li><a href="#waterlevel"><i class="fa fa-circle-o text-yellow"></i> Water Level </a></li>
           </ul>
         </li>
         
-        
-        
-        
-        
-        <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -338,14 +339,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>7.2<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Bounce Rate</p>
+              <p>PH</p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="ion">PH</i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#ph" class="small-box-footer scroll">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -353,14 +354,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3>35<sup style="font-size: 20px">C</sup></h3>
 
-              <p>User Registrations</p>
+              <p>Temperature</p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="ion" >Temp</i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#temperature" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -368,14 +369,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3>0.8<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Unique Visitors</p>
+              <p>Dissolved Oxygen</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="ion">DO</i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#do" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -387,14 +388,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>9.5<sup style="font-size: 20px">%</sup></h3>
 
-              <p>New Orders</p>
+              <p>Salinity</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="ion">Sal</i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#salinity" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -404,12 +405,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Bounce Rate</p>
+              <p>Turbidity</p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="ion">Tur</i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#turbidity" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -417,14 +418,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3>84<sup style="font-size: 20px">%</sup></h3>
 
-              <p>User Registrations</p>
+              <p>Water Level</p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="ion ">Wl</i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#waterlevel" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -434,6 +435,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
      
       <!-- sensors detailed view -->
+      <!-- ------------------------------ sensor reading 1 ------------------------- -->
+      <section id="ph">
       <div class="row">
         <div class="box box-solid bg-light-blue-gradient">
           <div class="box-header with-border">
@@ -445,7 +448,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- /. tools -->
 
               <h3 class="box-title">
-                Sensor
+                PH Sensor
               </h3>
           </div>
           <!-- box body -->
@@ -541,7 +544,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
 
       </div>
+    </section>
       <!-- -----------------------------sensor reading 2------------------------ -->
+      <section id="temperature">
       <div class="row">
         <div class="box box-solid " style="background-color: rgb(41, 163, 163);">
           <div class="box-header with-border">
@@ -649,7 +654,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
 
       </div>
-      <!-- sensor reading 3 -->
+      </section>
+      <!-- ------------------------------- sensor reading 3 --------------------------  -->
+      <section id="do">
       <div class="row">
         <div class="box box-solid bg-green-gradient ">
           <div class="box-header with-border">
@@ -756,8 +763,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- box body end -->
         </div>
         </div>
-
+        </section>
       <!------------------------------ sensor reading 4 -------------------------->
+      <section id="salinity">
       <div class="row">
         <div class="box box-solid bg-light-blue-gradient ">
           <div class="box-header with-border">
@@ -864,12 +872,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- box body end -->
         </div>
         </div>
-
+        </section>
 
 
 
 
       <!--------------------- sensor reading 5 ------------------------------ -->
+      <section id="turbidity">
       <div class="row">
         <div class="box box-solid"  style="background-color: rgb(41, 163, 163);">
           <div class="box-header with-border">
@@ -976,10 +985,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- box body end -->
         </div>
         </div>
-
+        </section>
 
 
   <!-- ------------------------sensor reading 6------------------------------- -->
+      <section id="waterlevel">
       <div class="row">
         <div class="box box-solid bg-green-gradient ">
           <div class="box-header with-border">
@@ -1086,7 +1096,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- box body end -->
         </div>
         </div>
-
+        </section>
 
 
 
