@@ -1,0 +1,8 @@
+*.pyc
+login01.jpg
+bin
+include
+lib
+local
+pip-selfcheck.json
+migrations
