@@ -339,7 +339,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>7.2<sup style="font-size: 20px">%</sup></h3>
+              <h3>{{ph_value_entry.parameterValue}}<sup style="font-size: 20px"></sup></h3>
 
               <p>PH</p>
             </div>
@@ -354,7 +354,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>35<sup style="font-size: 20px">C</sup></h3>
+              <h3>{{temperature_value_entry.parameterValue}}<sup style="font-size: 20px">C</sup></h3>
 
               <p>Temperature</p>
             </div>
@@ -369,7 +369,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>0.8<sup style="font-size: 20px">%</sup></h3>
+              <h3>{{do_value_entry.parameterValue}}<sup style="font-size: 20px"></sup></h3>
 
               <p>Dissolved Oxygen</p>
             </div>
@@ -388,7 +388,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>9.5<sup style="font-size: 20px">%</sup></h3>
+              <h3>{{salinity_value_entry.parameterValue}}<sup style="font-size: 20px"></sup></h3>
 
               <p>Salinity</p>
             </div>
@@ -403,7 +403,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>{{turbidity_value_entry.parameterValue}}<sup style="font-size: 20px"></sup></h3>
 
               <p>Turbidity</p>
             </div>
@@ -418,7 +418,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>84<sup style="font-size: 20px">%</sup></h3>
+              <h3>{{waterlevel_value_entry.parameterValue}}<sup style="font-size: 20px"></sup></h3>
 
               <p>Water Level</p>
             </div>
@@ -464,10 +464,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <ul class="nav nav-stacked">
-                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
-                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
-                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
-                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                    {% for i in ph_ideals %}
+                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">{{ph_value_entry.parameterValue}}</span></a></li>
+                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">{{i.standardValue}}</span></a></li>
+                    <li><a href="#">Highest Safe PH<span class="pull-right badge bg-green">{{i.safeUpperValue}}</span></a></li>
+                    <li><a href="#">Lowest Safe PH <span class="pull-right badge bg-red">{{i.safeLowerValue}}</span></a></li>
+                    {% endfor %}
                   </ul>
                 </div><!-- /.box-body -->
               </div>
@@ -574,10 +576,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <ul class="nav nav-stacked">
-                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
-                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
-                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
-                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                    {% for i in temperature_ideals %}
+                    <li><a href="#">Current Temperature <span class="pull-right badge bg-blue">{{temperature_value_entry.parameterValue}}</span></a></li>
+                    <li><a href="#">Standard Temperature <span class="pull-right badge bg-aqua">{{i.standardValue}}</span></a></li>
+                    <li><a href="#">Highest Safe Temperature<span class="pull-right badge bg-green">{{i.safeUpperValue}}</span></a></li>
+                    <li><a href="#">Lowest Safe Temperature <span class="pull-right badge bg-red">{{i.safeLowerValue}}</span></a></li>
+                    {% endfor %}
                   </ul>
                 </div><!-- /.box-body -->
               </div>
@@ -618,7 +622,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12 col-sm-12">
               <div class="box box-solid box-info">
                 <div class="box-header">
-                  <p style="font-size: 120%;color: black">PH Range</p>
+                  <p style="font-size: 120%;color: black">Temperature Range</p>
                     <input id="range_2" type="text" name="range_2" value="">
                 </div>
               </div>
@@ -668,7 +672,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- /. tools -->
 
               <h3 class="box-title" style="color: white;">
-                Salinity Sensor
+                Dissolved Oxygen Sensor
               </h3>
           </div>
           <!-- box body -->
@@ -684,10 +688,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <ul class="nav nav-stacked">
-                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
-                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
-                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
-                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                    {% for i in do_ideals %}
+                    <li><a href="#">Current Dissolved Oxygen <span class="pull-right badge bg-blue">{{do_value_entry.parameterValue}}</span></a></li>
+                    <li><a href="#">Standard Dissolved Oxygen <span class="pull-right badge bg-aqua">{{i.standardValue}}</span></a></li>
+                    <li><a href="#"> Highest Safe Dissolved Oxygen<span class="pull-right badge bg-green">{{i.safeUpperValue}}</span></a></li>
+                    <li><a href="#">Lowest Safe Dissolved Oxygen <span class="pull-right badge bg-red">{{i.safeLowerValue}}</span></a></li>
+                    {% endfor %}
                   </ul>
                 </div><!-- /.box-body -->
               </div>
@@ -728,7 +734,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12 col-sm-12">
               <div class="box box-solid box-info">
                 <div class="box-header">
-                  <p style="font-size: 120%;color: black">PH Range</p>
+                  <p style="font-size: 120%;color: black">Dissolved Oxygen Range</p>
                     <input id="range_3" type="text" name="range_3" value="">
                 </div>
               </div>
@@ -742,7 +748,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="box-header with-border">
               <i class="fa fa-bar-chart-o"></i>
 
-              <h3 class="box-title">Temperature vs Time</h3>
+              <h3 class="box-title">DO vs Time</h3>
 
               <div class="box-tools pull-right">
                 Real time
@@ -777,7 +783,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- /. tools -->
 
               <h3 class="box-title" style="color: white;">
-                Dissolved Oxygen Sensor
+                Salinity Sensor
               </h3>
           </div>
           <!-- box body -->
@@ -793,10 +799,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <ul class="nav nav-stacked">
-                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
-                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
-                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
-                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                    {% for i in salinity_ideals %}
+                    <li><a href="#">Current Salinity <span class="pull-right badge bg-blue">{{salinity_value_entry.parameterValue}}</span></a></li>
+                    <li><a href="#">Standard Salinity <span class="pull-right badge bg-aqua">{{i.standardValue}}</span></a></li>
+                    <li><a href="#">Highest Safe Salinity<span class="pull-right badge bg-green">{{i.safeUpperValue}}</span></a></li>
+                    <li><a href="#"> Lowest Safe Salinity <span class="pull-right badge bg-red">{{i.safeLowerValue}}</span></a></li>
+                    {% endfor %}
                   </ul>
                 </div><!-- /.box-body -->
               </div>
@@ -837,7 +845,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12 col-sm-12">
               <div class="box box-solid box-info">
                 <div class="box-header">
-                  <p style="font-size: 120%;color: black">DO Range</p>
+                  <p style="font-size: 120%;color: black">Salinity Range</p>
                     <input id="range_4" type="text" name="range_4" value="">
                 </div>
               </div>
@@ -851,7 +859,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="box-header with-border">
               <i class="fa fa-bar-chart-o"></i>
 
-              <h3 class="box-title">DO vs Time</h3>
+              <h3 class="box-title">Salinity vs Time</h3>
 
               <div class="box-tools pull-right">
                 Real time
@@ -906,10 +914,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <ul class="nav nav-stacked">
-                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
-                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
-                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
-                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                    {% for i in turbidity_ideals %}
+                    <li><a href="#">Current Turbidity <span class="pull-right badge bg-blue">{{turbidity_value_entry.parameterValue}}</span></a></li>
+                    <li><a href="#">Standard Turbidity <span class="pull-right badge bg-aqua">{{i.standardValue}}</span></a></li>
+                    <li><a href="#">Highest Safe Turbidity<span class="pull-right badge bg-green">{{i.safeUpperValue}}</span></a></li>
+                    <li><a href="#"> Lowest Safe Turbidity <span class="pull-right badge bg-red">{{i.safeLowerValue}}</span></a></li>
+                    {% endfor %}
                   </ul>
                 </div><!-- /.box-body -->
               </div>
@@ -950,7 +960,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12 col-sm-12">
               <div class="box box-solid box-info">
                 <div class="box-header">
-                  <p style="font-size: 120%;color: black">PH Range</p>
+                  <p style="font-size: 120%;color: black">Turbidity Range</p>
                     <input id="range_5" type="text" name="range_5" value="">
                 </div>
               </div>
@@ -964,7 +974,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="box-header with-border">
               <i class="fa fa-bar-chart-o"></i>
 
-              <h3 class="box-title">Temperature vs Time</h3>
+              <h3 class="box-title">Turbidity vs Time</h3>
 
               <div class="box-tools pull-right">
                 Real time
@@ -1001,7 +1011,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- /. tools -->
 
               <h3 class="box-title" style="color: white;">
-                Salinity Sensor
+                 Water Level Sensor
               </h3>
           </div>
           <!-- box body -->
@@ -1017,10 +1027,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <ul class="nav nav-stacked">
-                    <li><a href="#">Current PH <span class="pull-right badge bg-blue">31</span></a></li>
-                    <li><a href="#">Standard PH <span class="pull-right badge bg-aqua">5</span></a></li>
-                    <li><a href="#">Lowest Safe PH<span class="pull-right badge bg-green">12</span></a></li>
-                    <li><a href="#">Highest Safe PH <span class="pull-right badge bg-red">842</span></a></li>
+                    {% for i in waterlevel_ideals %}
+                    <li><a href="#">Current Water Level <span class="pull-right badge bg-blue">{{waterlevel_value_entry.parameterValue}}</span></a></li>
+                    <li><a href="#">Standard Water Level <span class="pull-right badge bg-aqua">{{i.standardValue}}</span></a></li>
+                    <li><a href="#">Highest Safe Water Level<span class="pull-right badge bg-green">{{i.safeUpperValue}}</span></a></li>
+                    <li><a href="#">Lowest Safe Water Level <span class="pull-right badge bg-red">{{i.safeLowerValue}}</span></a></li>
+                    {% endfor %}
                   </ul>
                 </div><!-- /.box-body -->
               </div>
@@ -1061,7 +1073,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12 col-sm-12">
               <div class="box box-solid box-info">
                 <div class="box-header">
-                  <p style="font-size: 120%;color: black">PH Range</p>
+                  <p style="font-size: 120%;color: black"> Water Level Range</p>
                     <input id="range_6" type="text" name="range_6" value="">
                 </div>
               </div>
@@ -1075,7 +1087,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="box-header with-border">
               <i class="fa fa-bar-chart-o"></i>
 
-              <h3 class="box-title">Temperature vs Time</h3>
+              <h3 class="box-title"> Water Level vs Time</h3>
 
               <div class="box-tools pull-right">
                 Real time
@@ -1112,10 +1124,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      Created By Imran and Anik
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2016 <a href="#">AQUALIZER</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -1228,7 +1240,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       min: 0,
       max: 14,
       from: 5,
-      to: 14,
+      to: 8,
       type: 'double',
       step: 0.1,
       prettify: true,
@@ -1236,22 +1248,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
 
     $("#range_2").ionRangeSlider({
-      min: 0,
-      max: 14,
-      from: 5,
-      to: 14,
+      min: 18,
+      max: 45,
+      from: 28,
+      to: 33,
       type: 'double',
-      step: 0.1,
+      step: 0.5,
       prettify: true,
       hasGrid: true
     });
     $("#range_3").ionRangeSlider({
-      min: 0,
-      max: 14,
-      from: 5,
-      to: 14,
+      min: 30,
+      max: 65,
+      from: 38,
+      to: 48,
       type: 'double',
-      step: 0.1,
+      step: 1,
       prettify: true,
       hasGrid: true
     });
